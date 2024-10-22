@@ -1,0 +1,11 @@
+{% extends 'blog/post_base.html' %}
+{% block banner %} - {{post.title}} {% endblock %}
+{% block body %}
+  <h1>{{ post.title }}</h1>
+  <small>{{ post.date }} : {{ post.author }}</small>
+  <hr class='bar green'>
+  <p>
+    {{ post.body | markdown | emoji | safe }}
+  </p>
+  <hr class='bar purple'>
+{% endblock %}

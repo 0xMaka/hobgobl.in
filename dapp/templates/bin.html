@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block banner %} - projects.. {% endblock %}
+{% block body %}
+  <hr class='bar purple'>
+  <center>
+    {% for project in content %}
+    <h3>{{ project.title }}</h3>
+    <i>{{ project.notes }}</i>
+    <br>
+    <br>
+    <a href='{{project.repo }}'>
+      <img src='static/img/bin/{{ project.image }}' width='600' onerror="this.src='static/img/bin/rhino.jpg'">
+    </a>
+    <br>
+    <p>
+    <a href='{{project.repo }}'>{{ project.repo }}</a>
+    </p>
+    <p>{{ project.body | markdown | safe }}</p>
+  <hr class='bar green'>
+  {% endfor %}
+  <center>
+{% endblock %}

@@ -1,0 +1,176 @@
+/*
+ +-+-+-+-+-+-+-+-+-+-+-
+ |h|o|b|g|o|b|l|.|i|n|
+ +-+-+-+-+-+-+-+-+-+-+ -----------------------
+  @title  : config.css                       |
+  @notice : core css config for hobgobl.in   |
+  @author : Maka                             |
+  @license: gnu gpl3                         |
+  -+-+-+-+-+-+-+-+-+-+ ------------------------------------------------------------------------------- */
+
+:root {
+
+  --green              : #07D9B2;
+  --purple             : #70548C;
+  --soft-purple        : #B080F2;
+  --dark-grey          : #262626;
+  --light-grey         : #808080;
+  --blue               : #48D1CC;
+  --grey               : #363A3B;
+  --black              : #0D0D0D;
+  --white              : #E6E6FA;
+
+  --p5black            : rgba(0, 0, 0, 0.5);
+  --p7black            : rgba(0, 0, 0, 0.7);
+  --p75purple          : rgba(112, 84, 140);
+
+  --fonts              : 'gotham', sans-serif, 'Helvetica Neue', Helvetica, Arial;
+  --dancing-script     : 'DancingScript-Regular';
+  --themed-font        : var(--dancing-script);
+
+/* --------------------------------------------------------------------------------------------------- */
+
+  --main-margin        : 0;
+  --main-padding       : 0;
+  --main-fonts         : var(--fonts);
+  --main-color         : var(--white);
+  --main-bgcolor       : var(--grey );
+
+  --max-width          : 100%;
+
+  --main-width         : var(--max-width);
+  --main-height        : var(--max-width);
+
+  --header-width       : var(--max-width);
+  --header-height      : 35px;
+  --header-opacity     : .9;
+  --header-margin      : 0px;
+  --header-font        : var(--themed-font);
+  --header-size        : 1.7em;
+  --header-color       : var(--green);
+  --header-bgcolor     : var(--dark-grey);
+  --header-case        : lowercase;
+  --header-h1-shadow   : 2px 2px var(--black);
+  --header-shadow      : 0 -2px 4px var(--soft-purple);
+  --header-float       : left;
+
+  --logo-hover         : #B080F2;
+  --logo-a             : #07D9B2;
+  --logo-a-hover       : #B080F2;
+
+  --link-decoration    : none;
+  --link               : var(--green);
+  --link-hover         : var(--purple);
+
+  --img-border         : 2px solid var(--p75purple);
+
+/* --------------------------------------------------------------------------------------------------- */
+
+  --contain-width      : 1000px;
+  --contain-margin     : 0 auto;
+  --content-width      : 960px;
+  --content-margin     : 0 auto;
+  --frame-shadow       : 2.5px 0 3.5px 0 var(--p5black) inset, -2.5px 0 3.5px 0px var(--p5black) inset;
+  --frame-position     : sticky;
+  --frame-top          : 0;
+  --frame-width        : var(--max-width);
+  --frame-height       : var(--max-width);
+  --frame-overflow     : auto;
+
+  --code-box-pad       : 1px 3px 1.4px 3px;
+  --code-box-color     : var(--dark-grey);
+  --code-box-radius    : 2px;
+
+  --block-display      : block;
+  --block-width        : 90%;
+  --block-pad          : 10px;
+  --block-pad-left     : 28px;
+  --block-margin       : 0 auto;
+  --block-position     : relative;
+  --block-shadow       : inset 0px 0px 2px var(--white);
+
+  --zsh-prompt         : '% ' ;
+  --bash-prompt        : '$ ';
+  --root-prompt        : '# ' ;
+  --default-prompt     : var(--zsh-prompt);
+
+  --prompt-content     : var(--default-prompt);
+  --prompt-display     : inline-block;
+  --prompt-txt-weight  : bold;
+  --prompt-txt-size    : 1.2em;
+  --prompt-width       : 1.2em;
+  --prompt-height      : 1.2em;
+  --prompt-pad-left    : 11px;
+  --prompt-pad-top     : 10.5px;
+  --prompt-color       : green;
+  --prompt-radius      : 50%;
+  --prompt-position    : absolute;
+  --prompt-top         : 0;
+  --prompt-left        : 0;
+
+/* --------------------------------------------------------------------------------------------------- */
+
+  --bar-pad            : 0px 0px 0px 0px;
+  --bar-color          : var(--dark-grey);
+  --bar-radius         : 0px;
+  --bar-height         : 2px;
+  --bar-width          : var(--max-width);
+  --bar-border         : none;
+
+  --gbar-color         : var(--green);
+  --gbar-radius        : 2px;
+
+  --pbar-color         : var(--purple);
+  --pbar-radius        : 2px;
+
+  --box-pad-top        : 1px;
+  --box-pad-bottom     : 1px;
+  --box-pad-left       : 8px;
+  --box-pad-right      : 8px;
+  --box-sizing         : border-box;
+  --box-bg-color       : var(--dark-grey);
+  --box-radius         : 4px;
+  --box-txt-shadow     : 1px 1px 1px var(--p7black);
+  --box-shadow         : 0px 2px var(--p5black);
+
+  --gbox-color         : var(--green);
+  --pbox-color         : var(--purple);
+
+  --block-note-style   : italic;
+
+/* --------------------------------------------------------------------------------------------------- */
+
+  --h1-size            : 2em;
+  --h1-shadow          : 2px 2px 1px var(--p7black);
+
+  --h2-size            : 1.8em;
+  --h2-shadow          : 2px 2px 1px var(--p7black);
+
+  --h3-size            : 1.6em;
+  --h3-weight          : 100;
+  --h3-margin          : 30px;
+  --h3-align           : center;
+  --h3-spacing         : -1px;
+  --h3-color           : #999;
+  --h3-shadow          : 1.5px 1.5px var(--p5black);
+
+  --menu-float         : right;
+  --menu-margin        : 8px;
+  --menu-txt-shadow    : 2px 2px var(--p7black);
+  --menu-display       : inline;
+  --menu-shift-left    : 25px;
+  --menu-shift-right   : 20px;
+  --menu-link          : var(--soft-purple);
+  --menu-hover         : var(--green);
+
+  --strip-height       : 2px;
+  --strip-color        : var(--soft-purple);
+
+  --footer-width       : 1000px;
+  --footer-margin      : 0 auto;
+  --footer-height      : 16px;
+  --footer-font        : var(--themed-font);
+  --footer-align       : right;
+
+}
+/* --------------------------------------------------------------------------------------------------- */

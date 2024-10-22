@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block banner %} - the blog goblin{% endblock %}
+{% block body %}
+<p>
+  <hr class='bar purple'>
+  {% for post in content %}
+  <center>
+    <table class=blog-post>
+      <thead>
+      <tr>
+
+        <th class=smooth-top-left  width='800'>
+          <div style="text-align: left;">
+          <a href="{{
+            url_for('posts', name=post.path[post.path.rfind('/') +1:])
+          }}">{{ post.title }}</a>
+          </div>
+        </th>
+        <th class=smooth-top-right>
+          <div style="text-align: right;"><small>{{ post.date }}</small></div>
+        </th>
+
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td class=smooth-bottom-left>
+          {{ post.notice }}
+        </td>
+        <td class=smooth-bottom-right>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </center>
+  <hr class='bar green'>
+  {% endfor %}
+</p>
+{% endblock %}

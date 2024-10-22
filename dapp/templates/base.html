@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> hobgobl.in {% block banner %}{% endblock %}</title>
+    <meta charset='utf-8' />
+
+    <meta property='og:title'        content='hobgobl.in' />
+    <meta property='og:description'  content='A blockchain mechanics blog' />
+    <meta property='og:image'        content='{{ url_for("static", filename="img/site/banner.jpg") }}'/>
+
+    <meta name='twitter:card'        content='summary_large_image' />
+    <meta name='twitter:title'       content='hobgobl.in' />
+    <meta name='twitter:description' content='A blockchain mechanics blog' />
+    <meta name='twitter:image'       content='{{ url_for("static", filename="img/site/banner.jpg")   }}' />
+
+    <meta name='viewport'           content='width=device-width'>
+
+    <link rel='shortcut icon' href='{{ url_for("static", filename="img/site/favicon.ico")   }}'>
+    <link rel='stylesheet'    href='{{ url_for("static", filename="css/config.css")         }}'>
+    <link rel='stylesheet'    href='{{ url_for("static", filename="css/dancing-script.css") }}'>
+    <link rel='stylesheet'    href='{{ url_for("static", filename="css/main.css")           }}'>
+  </head>
+  <div class='frame'>
+  <body>
+    <header>
+      <div class='container'>
+          <h1 class='logo'><a href='{{ url_for("index") }}'>hobgobl.in</a></h1>
+        <strong><nav>
+          <ul class='menu'>
+            <li><a href='{{ url_for("blog")    }}'>Blog</a></li>
+            <li><a href='{{ url_for("projects")}}'>Bin</a></li>
+            <li><a href='{{ url_for("contact") }}'>Info</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+
+    <div class='container'>
+      <h1>
+        {{ heading }}
+      </h1>
+      <hr class=bar>
+      <p> <i>{{ quote }}</i></p>
+      <div class=content>
+        <p>{% block body %}{% endblock %}</p>
+      </div>
+      <hr class=bar>
+    </div>
+
+    <footer>
+      <div class='footer'>python/flask powered 🐍</div><br>
+    </footer>
+  </div>
+  </body>
+</html>
+
