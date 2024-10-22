@@ -1,5 +1,5 @@
 title  : My first rescue (sort of)
-notice : A router rescue for $120k, via a simple repurposing of a remove liquidity function.
+notice : A router rescue for $120k, via the simple repurposing of a remove liquidity function.
 date   : 22-10-2024
 author : Maka
 
@@ -14,16 +14,16 @@ I say sort of my first rescue because while I was the one handling the ticket, i
 the mechanic at the time.<br>
 
 Afterwards I became quite interested in searching for discrepancies between the intention and the potential of a given mechanic, as they can be found all over
-(particularly where any interoperation between contacts occures).
+(particularly where any interoperation between contracts can occur).
 
 #### The problem
-It is still incredibly common for people to transfer tokens to the wrong address, and while this has been helped through additonal checks on transfer by the well known wallet providers,
-it doesn't solve a most common cause which is attempting to interact with a contracts functions programatically.
+It is still incredibly common for people to transfer tokens to the wrong address, and while this has been helped through additional checks on transfer by the well known wallet providers,
+it doesn't solve a most common cause which is attempting to interact with a contracts functions programmatically.
 
-Addresses can be confused, function arguments can be missinterpretted, and developers of all levels love to test live. This has resulted in
+Addresses can be confused, function arguments can be misinterpreted, and developers of all levels love to test live. This has resulted in
 destinations being set incorrectly, and in many cases with no way to recover the tokens.
 <blockquote class='note'>
-Some of my most gut renching convos where with people who had sent dizzying sums to the Sushi token contract.
+Some of my most gut wrenching convos were with people who had sent dizzying sums to the Sushi token contract.
 </blockquote>
 However, for Uniswaps v2 router there is a way to rescue ERC20 tokens, we just need to be quick enough to grab them before someone who won't give them back.
 
@@ -58,7 +58,7 @@ The reason this variant exists is that some tokens (commonly meme coins) will ha
   <code class='block language-js'>
 
 // **** REMOVE LIQUIDITY (supporting fee-on-transfer tokens) ****
-fuction removeLiquidityETHSupportingFeeOnTransferTokens(
+function removeLiquidityETHSupportingFeeOnTransferTokens(
   address token,
   uint liquidity,
   uint amountTokenMin,
@@ -89,12 +89,12 @@ This is a case where rather than use an amount we need to be verifiably pre enti
 This is how we can _loosen_ the stuck token.
 
 We'll go over an implementation but it is essentially that simple.
-However, the pressure of performing this correctly and the lack of protection for any blame or allogations that can be thrown around if you fail, should not be understated.
+However, the pressure of performing this correctly and the lack of protection for any blame or allegations that can be thrown around if you fail, should not be understated.
 
 ## Front running concerns
 In terms of being front run when sending the transaction, it isn't as vulnerable as say, calling the `sweepETH` function on a Trident router.<br>
-The `sweep` functions were added as a decentralised way to perform the above, but by design and without the gymnastics (a wonderful and trully decentralised solution).<br>
-The problem being that if you call the function directly, any bot running simulations on the calldata will see that just naivly sending the same thing as you were about to,
+The `sweep` functions were added as a decentralised way to perform the above, but by design and without the gymnastics (a wonderful and truly decentralised solution).<br>
+The problem being that if you call the function directly, any bot running simulations on the calldata will see that just naively sending the same thing as you were about to,
 without any investment beyond the gas fee, will result in an account increase and so blind front running becomes a major issue.
 <blockquote class='note'>
 The above can be somewhat mitigated by proxying the call through a relay that does a check on sender or hardcodes destination, as this can obfuscate the call and fail if naively simmed.
@@ -102,15 +102,15 @@ The above can be somewhat mitigated by proxying the call through a relay that do
 
 Here it's a little more involved, quite importantly we are increasing our balance of some token but decreasing our balance of the native coin, which is harder for a blind sim to account for.
 
-Additionally the rescue requires an investment in aquiring the liquidity that will be used to pull the tokens, and we need to perform the actions atomically from our own contract
+Additionally the rescue requires an investment in acquiring the liquidity that will be used to pull the tokens, and we need to perform the actions atomically from our own contract
 which can block or obfuscate the call, so a naive simulation shouldn't pick up on it.<br>
 As such I've only seen one of these rescues be front run in the same block as the rescue attempt (sub $100 thankfully), where as I have seen many sweeps be front run for not more than dust.
 
 In most cases if you have time to see the tokens at the router then it's worth trying to rescue them, and you _should_ be safe to deploy or call without a private transaction.
 
 ## A basic rescue contract
-The rescue contract from the case above was written by a friend in Solidity, and was practically identicle to the one I have written in Vyper below.<br>
-The version I deploy these days (v2 rescues are still a thing) doesn't use any hardcoded args with even the router being passed, so it can be deployed
+The rescue contract from the case above was written by a friend in Solidity, and was practically identical to the one I have written in Vyper below.<br>
+The version I deploy these days (v2 rescues are still a thing) doesn't use any hard coded args with even the router being passed, so it can be deployed
 ahead of time and facilitate forked protocols. It has some mild gas savings by receiving a byte stream instead of abi encodings, and working directly on the
 pools untill the final router call is needed.
 
@@ -200,3 +200,4 @@ In the next post we'll look at computing pool and init code hashes and how it re
 Till next time.
 
 <div class='handwritten'>1 love</div>
+    
