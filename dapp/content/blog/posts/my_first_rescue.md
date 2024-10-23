@@ -97,7 +97,7 @@ The `sweep` functions were added as a decentralised way to perform the above, bu
 The problem being that if you call the function directly, any bot running simulations on the calldata will see that just naively sending the same thing as you were about to,
 without any investment beyond the gas fee, will result in an account increase and so blind front running becomes a major issue.
 <blockquote class='note'>
-The above can be somewhat mitigated by proxying the call through a relay that does a check on sender or hardcodes destination, as this can obfuscate the call and fail if naively simmed.
+The above can be somewhat mitigated by proxying the call through a relay that does a check on sender or hard codes destination, as this can obfuscate the call and fail if naively simmed.
 </blockquote>
 
 Here it's a little more involved, quite importantly we are increasing our balance of some token but decreasing our balance of the native coin, which is harder for a blind sim to account for.
@@ -200,4 +200,3 @@ In the next post we'll look at computing pool and init code hashes and how it re
 Till next time.
 
 <div class='handwritten'>1 love</div>
-    

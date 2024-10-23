@@ -67,9 +67,16 @@
 /* --------------------------------------------------------------------------------------------------- */
 
   --contain-width      : 1000px;
-  --contain-margin     : 0 auto;
-  --content-width      : 960px;
+  --contain-margin     : auto;
+  --content-width      : 900px;
   --content-margin     : 0 auto;
+
+
+  --m_contain-width    : 85%;
+  --m_contain-margin   : 0 auto;
+  --m_content-width    : 96%;
+  --m_content-margin   : 0 auto;
+
   --frame-shadow       : 2.5px 0 3.5px 0 var(--p5black) inset, -2.5px 0 3.5px 0px var(--p5black) inset;
   --frame-position     : sticky;
   --frame-top          : 0;
@@ -123,6 +130,7 @@
   --pbar-color         : var(--purple);
   --pbar-radius        : 2px;
 
+  --box-width          : 90%;
   --box-pad-top        : 1px;
   --box-pad-bottom     : 1px;
   --box-pad-left       : 8px;
@@ -166,11 +174,14 @@
   --strip-height       : 2px;
   --strip-color        : var(--soft-purple);
 
-  --footer-width       : 1000px;
+  --footer-width       : var(--contain-width);
+
   --footer-margin      : 0 auto;
   --footer-height      : 16px;
   --footer-font        : var(--themed-font);
   --footer-align       : right;
+
+  --m_footer-width     : var(--m_contain-width);
 
 }
 /* --------------------------------------------------------------------------------------------------- */

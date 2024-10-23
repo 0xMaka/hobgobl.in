@@ -1,4 +1,4 @@
-/*
+ /*
  +-+-+-+-+-+-+-+-+-+-+-
  |h|o|b|g|o|b|l|.|i|n|
  +-+-+-+-+-+-+-+-+-+-+ ----------------------------------------------------------------
@@ -30,6 +30,18 @@ div.frame {
   overflow             : var(--frame-overflow);
 }
 
+@media only screen and (max-width: 900px) {
+  body {
+    font-size          : 16px;
+    margin             : 0;
+    max-width          : 100%;
+    width              : 100%;
+  }
+  div.container        { width: var(--m_content-width); margin: var(--m_content-margin); }
+  div.content          { width: var(--m_content-width); margin: var(--m_content-margin); }
+}
+
+
 /*-----------------------------------------------------------------------------------*/
 
 
@@ -60,13 +72,25 @@ header h1.logo a:hover { color : var(--logo-a-hover); }
 /*-----------------------------------------------------------------------------*/
 
 .handwritten           { font-family     : var(--dancing-script );}
-img                    { border          : var(--img-border     );}
 a                      { color           : var(--link           );}
 a                      { text-decoration : var(--link-decoration);}
 a:hover                { color           : var(--link-hover     );}
 
-/*-----------------------------------------------------------------------------*/
+img {
+  border               : var(--img-border     );
+  width                : 500px;
+}
 
+
+
+img.banner {
+  width                : 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  img { width          : 60%; }
+}
+/*-----------------------------------------------------------------------------*/
 
 /* Code blocks */
 code {
@@ -75,6 +99,13 @@ code {
   -webkit-border-radius: var(--code-box-radius);
      -moz-border-radius: var(--code-box-radius);
           border-radius: var(--code-box-radius);
+          overflow-y   : auto; /* Enable vertical scrolling */
+}
+
+@media only screen and (max-width: 900px) {
+  code {
+    font-size          : 12px;
+  }
 }
 
 code.block {
@@ -141,6 +172,7 @@ hr.bar.purple {
 }
 
 div.box {
+  width                : var(--box-width     );
   padding-top          : var(--box-pad-top   );
   padding-bottom       : var(--box-pad-bottom);
   padding-left         : var(--box-pad-left  );
@@ -209,6 +241,10 @@ div.footer {
   height               : var(--footer-height);
   font-family          : var(--footer-font  );
   text-align           : var(--footer-align );
+}
+
+@media only screen and (max-width: 900px) {
+  div.footer           { width: var(--m_content-width); margin: var(--m_content-margin); }
 }
 
 /* ---------------------
@@ -290,8 +326,8 @@ table.blog-post th,
 table.blog-post td {
   background-color     : var(--dark-grey);
   border               : 0px solid;
-  padding-top          : 6px;
-  padding-bottom       : 6px;
+  padding-top          : 3px;
+  padding-bottom       : 3px;
   padding-left         : 8px;
   padding-right        : 8px;
 }
@@ -299,6 +335,11 @@ table.blog-post td {
 table.blog-post th {
   background-color     : var(--dark-grey);
   text-shadow          : 1px 1px 2.5px var(--p7black);
+}
+
+table.blog-post td {
+  padding-top          : 4px;
+  padding-bottom       : 4px;
 }
 
 table.blog-post th a {
@@ -327,6 +368,13 @@ table.blog-post thead::after {
 
 table.blog-post.centered {
   text-align           : center;
+}
+
+table.blog-summary {
+  box-shadow           : none;
+  width                : 100%;
+
+  padding : 0px;
 }
 
 table.cyber-punk th {
@@ -374,5 +422,23 @@ table.cyber-punk th a:hover {
   -moz-border-bottom-left-radius    : 0px;
   -moz-border-bottom-right-radius   : 5px;
   border-bottom-left-radius         : 0px;
+  border-bottom-right-radius        : 5px;
+}
+
+.smooth-both-top      {
+  -webkit-border-top-left-radius    : 5px;
+  -webkit-border-top-right-radius   : 5px;
+  -moz-border-top-left-radius       : 5px;
+  -moz-border-top-right-radius      : 5px;
+  border-top-left-radius            : 5px;
+  border-top-right-radius           : 5px;
+}
+
+.smooth-both-bottom   {
+  -webkit-border-bottom-left-radius : 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-bottom-left-radius    : 5px;
+  -moz-border-bottom-right-radius   : 5px;
+  border-bottom-left-radius         : 5px;
   border-bottom-right-radius        : 5px;
 }

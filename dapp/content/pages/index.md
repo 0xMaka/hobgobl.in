@@ -1,11 +1,15 @@
 title : index.md
 <center>
-  <img class=banner src='static/img/site/banner.jpg' width='80%'>
-</center>
-<p>
-  <div class='box purple'>
+  <img class=banner src='static/img/site/banner.jpg'>
+
+  <br><br>
+ <div class='box purple'>
     <p>You've reached the landing pad for Maka's lab. We have web3 py guides, posts on tech topics, blockchain and embedded projects.</p>
   </div>
+
+  </center>
+<p>
+
     <hr class='bar purple'>
     <p>
       Checkout the <a href='https://github.com/0xmaka/w3py'>py on chain</a> repo it's packed with examples. Mainly focusing on AMM's, though

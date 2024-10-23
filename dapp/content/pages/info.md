@@ -1,8 +1,8 @@
 title : info
 <center>
   <figure>
-    <img src='static/img/misc/me_by_poison_hikari.jpg' width='500'>
-    <figcaption>Maka for Sushi, by <a href='https://opensea.io/collection/poison-hikari-collection'>Poison Hikari.</a></figcaption>
+    <img src='static/img/misc/me_by_poison_hikari.jpg' width='60%'>
+    <figcaption><small>Maka for Sushi, by <a href='https://opensea.io/collection/poison-hikari-collection'>Poison Hikari.</a></small></figcaption>
   </figure>
 </center>
 

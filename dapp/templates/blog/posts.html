@@ -1,3 +1,13 @@
+<!--
+# +-+-+-+-+-+-+-+-+-+-+-
+# |h|o|b|g|o|b|l|.|i|n|
+# +-+-+-+-+-+-+-+-+-+-+ --------------
+# @title  : posts.html               |
+# @notice : displays a list of posts Z
+# @author : Maka                     |
+# @license: gnu gpl3                 z
+# -+-+-+-+-+-+-+-+-+-+ ------------------------------------------------------------- */
+-->
 {% extends 'base.html' %}
 {% block banner %} - the blog goblin{% endblock %}
 {% block body %}
@@ -5,34 +15,46 @@
   <hr class='bar purple'>
   {% for post in content %}
   <center>
-    <table class=blog-post>
-      <thead>
-      <tr>
 
-        <th class=smooth-top-left  width='800'>
-          <div style="text-align: left;">
-          <a href="{{
-            url_for('posts', name=post.path[post.path.rfind('/') +1:])
-          }}">{{ post.title }}</a>
-          </div>
+        <table class='blog-post'>
+                <thead>
+                        <tr>
+                                <th class='smooth-both-top'>
+
+                <table class=blog-summary>
+            <tr>
+            <!-- Post Name -->
+              <th class=smooth-top-left>
+                <div style="text-align: left;">
+                  <a href="{{
+                    url_for('posts', name=post.path[post.path.rfind('/') +1:])
+                  }}">{{ post.title }}</a>
+                </div>
+              </th>
+
+            <!-- Post Date -->
+                                <th class=smooth-top-right>
+                <div style="text-align: right;"><small>{{ post.date }}</small></div>
+              </th>
+                        </tr>
+                </table>
+
         </th>
-        <th class=smooth-top-right>
-          <div style="text-align: right;"><small>{{ post.date }}</small></div>
-        </th>
+                        </tr>
+                </thead>
 
-      </tr>
-      </thead>
+                <tbody>
+                        <tr>
+           <!-- Post Summary -->
+                                <td class='smooth-both-bottom'>
 
-      <tbody>
-      <tr>
-        <td class=smooth-bottom-left>
           {{ post.notice }}
+
         </td>
-        <td class=smooth-bottom-right>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+                        </tr>
+                </tbody>
+        </table>
+
   </center>
   <hr class='bar green'>
   {% endfor %}
